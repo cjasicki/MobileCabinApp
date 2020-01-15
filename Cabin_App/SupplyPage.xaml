@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="transparent"
+             Title="         Update List"
+             x:Class="Cabin_App.SupplyPage">
+    <StackLayout x:Name="ListLayout" Opacity="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="1" Grid.Row="0"          
+               Grid.ColumnSpan="3"
+               Text="Item"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Medium"
+               TextColor="Blue"
+               FontAttributes="Bold" />
+            <Label Grid.Column="4" Grid.Row="0"
+               Text="Len"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Medium"
+               TextColor="Blue"
+               FontAttributes="Bold"    />
+            <Label Grid.Column="5" Grid.Row="0"
+               Text="Qty"
+               TextColor="Blue"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Medium"
+               FontAttributes="Bold" />
+            <Label Grid.Column="6" Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Text="Notes"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Medium"
+               TextColor="Blue"
+               FontAttributes="Bold" />
+            <Label Grid.Column="9" Grid.Row="0"
+               Text=""
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Medium"
+               TextColor="Black"
+               FontAttributes="Bold" />
+        </Grid >
+        <ListView x:Name="layoutListView"
+                  ItemSelected="EvetClicked"
+                  SeparatorColor="IndianRed"
+                  IsPullToRefreshEnabled="True" 
+
+                  VerticalOptions="End"
+                  ItemsSource="{Binding .}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnSpacing="3">
+                            <CheckBox  Grid.Column="0"
+                                IsChecked="{Binding ChkDone}" />
+                            <CheckBox Color="Green"  />
+                            <Label Grid.Column="1"
+                               Grid.ColumnSpan="3"
+                               Text="{Binding Name}"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               FontSize="Medium"
+                               TextColor="Black"
+                               FontAttributes="Bold" />
+                            <Label Grid.Column="4" 
+                               Text="{Binding Size}"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               FontSize="Medium"
+                               TextColor="Black" />
+                            <Label Grid.Column="5" 
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Text="{Binding Count}"
+                               FontSize="Medium"
+                               TextColor="Black" />
+                            <Label Grid.Column="6" 
+                                   Grid.ColumnSpan="3"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Text="{Binding Grade}"
+                               FontSize="Medium"
+                               TextColor="Black" />
+                            <Button Grid.Column="9"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="DeleteClicked"
+                                    ImageSource="del.png"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Button Text="Update List" BorderWidth="2" BorderColor="#0087BCFE" Grid.Column="0" Font="20" FontAttributes="Bold"
+                Clicked="NextPage_Clicked" />
+            <Button Text="Add Item" Grid.Column="1" BorderWidth="2" BorderColor="Azure"  Font="20" FontAttributes="Bold"
+                Clicked="AddItemPage_Clicked" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

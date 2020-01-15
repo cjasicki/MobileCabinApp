@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Cabin Time" 
+             x:Class="Cabin_App.MainPage"
+    BackgroundImage="BirchWoods.png">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Chad's Cabin App" Icon="sharp_info_black_18dp.png" Priority="0"
+                     Order="Secondary"
+                     Clicked="MenuItem_OnClicked"/>
+        <ToolbarItem Text="Email: cjasicki@gmail.com" Priority="0"
+                     Order="Secondary"
+                     Clicked="MenuItem_OnClicked"/>
+        <ToolbarItem Text="Build: 001" Priority="0"
+                     Order="Secondary"
+                     Clicked="MenuItem_OnClicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key ="infostyleOpBtn" TargetType="Button">
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="5"/>
+                <Setter Property="BorderRadius" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <!--<Label Text="Cabin Life"
+               TextColor="Azure"
+               FontAttributes="Bold"
+               FontSize="Title"
+               BackgroundColor="Blue"
+               HorizontalOptions="Center"
+               VerticalOptions="Fill"/>-->
+        <Label></Label>
+        <Label></Label>
+        <Button Text="Weather, WebCams" 
+                Font="30"
+                BackgroundColor="Transparent"
+                FontAttributes="Bold"
+                FontFamily="Arial"
+                TextColor="{StaticResource txtColor}"
+                Style="{StaticResource infostyleOpBtn}"
+                CornerRadius="30"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+                BorderWidth="8"
+                BorderColor="#4488F6"
+               Clicked="Weather_Clicked" />
+        <Label></Label>
+        <Label></Label>
+        <Button Text="Shopping list"
+                Font="30"
+                FontAttributes="Bold"
+                FontFamily="Arial"
+                TextColor="{StaticResource txtColor}"
+                BackgroundColor="Transparent"
+                Style="{StaticResource infostyleOpBtn}"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+                BorderWidth="8"
+                BorderColor="#4488F6"
+               Clicked="Supply_Clicked" />
+        <Label></Label>
+        <Label></Label>
+        <Button Text="Notes"
+                Font="30"
+                FontAttributes="Bold"
+                FontFamily="Arial"
+                TextColor="{StaticResource txtColor}"
+                BackgroundColor="Transparent"
+                Style="{StaticResource infostyleOpBtn}"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+                BorderWidth="8"
+                BorderColor="#4488F6"
+                 CornerRadius="30"
+                Clicked="Notes_Clicked" />
+        <Label></Label>
+        <Label></Label>
+        <Button Text="Floor Plan"
+                Font="30"
+                FontAttributes="Bold"
+                FontFamily="Arial"
+                TextColor="{StaticResource txtColor}"
+                BackgroundColor="Transparent"
+                Style="{StaticResource infostyleOpBtn}"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+                BorderWidth="8"
+                BorderColor="#4488F6"
+                 CornerRadius="30"
+                Clicked="Plan_Clicked" />
+        <Label></Label>
+        <Label></Label>
+    </StackLayout>
+</ContentPage>

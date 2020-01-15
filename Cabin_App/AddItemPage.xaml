@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BackGround}"
+             x:Class="Cabin_App.AddItemPage"
+             BackgroundImage="burch2.png"
+             Title="Add Item">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key ="infostyle" TargetType="Label">
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="TextColor" Value="AntiqueWhite"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="Gray"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding="5,0" RowSpacing="3" ColumnSpacing="3" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="64" />
+            <RowDefinition Height="60" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 4nd row -->
+        <Editor x:Name="txtName" Grid.Row="3" Grid.Column="0" FontSize="Medium" FontAttributes="Bold" 
+                BackgroundColor="AntiqueWhite" TextColor="DarkGreen" Grid.ColumnSpan="2" />
+        <Entry x:Name="txtSize" Grid.Row="3" Grid.Column="2" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric"  
+               HorizontalTextAlignment="Center" BackgroundColor="AntiqueWhite" TextColor="DarkGreen" />
+        <Entry x:Name="txtQty" Grid.Row="3" Grid.Column="3" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric"
+               HorizontalTextAlignment="Center" BackgroundColor="AntiqueWhite" TextColor="DarkGreen" />
+        <Editor x:Name="txtGrade" Grid.Row="3" Grid.Column="4" FontSize="Medium" FontAttributes="Bold" 
+                BackgroundColor="AntiqueWhite" TextColor="DarkGreen" Grid.ColumnSpan="2"/>
+
+        <!-- 1st row -->
+        <Label x:Name="ErrTxt" Text="" FontSize="30" TextColor="Black" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
+        
+        <!-- 2st row -->
+        <Button Text="Enter" Clicked="AddBtn_Clicked" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" FontSize="40" 
+                TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+
+        <!-- 3st row -->
+        <Label Text="Item" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" Style="{StaticResource infostyle}" Grid.ColumnSpan="2"/>
+        <Label Text="Len (Ft.)" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2" Grid.Column="2" Style="{StaticResource infostyle}"/>
+        <Label Text="Qty" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2" Grid.Column="3" Style="{StaticResource infostyle}" />
+        <Label Text="Notes" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2" Grid.Column="4" Style="{StaticResource infostyle}" Grid.ColumnSpan="2" />
+
+        <!-- 4st row -->
+        <Label Text="Quick Add" FontSize="24" TextColor="DarkTurquoise" FontAttributes="Bold" VerticalTextAlignment="End" HorizontalTextAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="6" />
+
+        <!-- 5st row -->
+        <Button Text="2x4" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+        <Button Text="2x6" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+        <Button Text="2x8" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+
+        <!-- 6st row -->
+        <Button Text="2x10" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+        <Button Text="2x12" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+        <Button Text="2x14" Clicked="QAddBtn_Clicked" FontSize="20" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" TextColor="BlanchedAlmond" FontAttributes="Bold" BorderWidth="4" BorderColor="DarkSlateBlue" BackgroundColor="LightBlue" />
+
+        <Label Text="" FontSize="30" TextColor="Black" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
+    </Grid>
+
+
+    
+</ContentPage>

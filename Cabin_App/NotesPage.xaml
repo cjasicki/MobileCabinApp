@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Notes"
+             BackgroundImage="BirchWoods.png"
+             x:Class="Cabin_App.NotesPage">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type ListView}">
+            <Setter Property="BackgroundColor" 
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" 
+                     Clicked="OnNoteAddedClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="listView" Opacity=".90" 
+              Margin="{StaticResource PageMargin}" BackgroundColor="LightBlue" 
+              ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Text}" Height="50" TextColor="Purple"  
+                          Detail="{Binding Date}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

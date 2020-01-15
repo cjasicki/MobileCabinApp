@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{StaticResource BackGround}"
+             Title="Edit List Form" 
+             x:Class="Cabin_App.ListPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="LVLayout" HorizontalOptions="CenterAndExpand">
+            <ListView x:Name="layoutListView2" HorizontalOptions="CenterAndExpand" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Caption"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       Text="{Binding Name}"
+                                       TextColor="Red"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Column="2"
+                                       Text="Lan"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       TextColor="Blue"
+                                       FontAttributes="Italic" />
+                                <Entry x:Name="txtSize" 
+                                       TextChanged="txtCount_TextChanged"
+                                       Grid.Column="3" 
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Medium" 
+                                       FontAttributes="Bold" 
+                                       BackgroundColor="LightYellow" 
+                                       Text="{Binding Size}"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="DarkGreen" />
+                                <Label Grid.Column="5"
+                                       x:Name="test"
+                                       Text="Qty"
+                                       TextColor="Blue"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontAttributes="Italic" />
+                                <Entry x:Name="txtCount" 
+                                       BackgroundColor="LightYellow"
+                                       TextChanged="txtCount_TextChanged"
+                                       Grid.Column="6" 
+                                       Grid.ColumnSpan="2"
+                                       FontSize="Medium" 
+                                       FontAttributes="Bold" 
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding Count}"
+                                       TextColor="DarkGreen" />
+                                <Label Grid.Column="8"
+                                       Grid.ColumnSpan="2"
+                                       Text="Note"                  
+                                       LineBreakMode="NoWrap"
+                                       TextColor="Blue"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontAttributes="Italic" />
+                                <Label Grid.Column="10" 
+                                       Grid.ColumnSpan="3"
+                                       FontSize="Caption"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontAttributes="Bold" 
+                                       Text="{Binding Grade}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="lblErr" 
+            Text="error?"/>
+            <Button Text="Save List"
+                    x:Name="b1"
+                    HorizontalOptions="CenterAndExpand"
+                Clicked="Save_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
