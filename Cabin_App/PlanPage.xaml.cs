@@ -13,7 +13,7 @@ namespace Cabin_App
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-
+   
     public partial class PlanPage : ContentPage
     {
         public PlanPage()
